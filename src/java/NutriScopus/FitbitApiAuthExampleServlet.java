@@ -54,7 +54,7 @@ public class FitbitApiAuthExampleServlet extends HttpServlet {
         exampleBaseUrl ="http://localhost:8084/Nutriscope/";
         clientConsumerKey ="381ac49b05e54a8892339a80a57dcc61";
         clientSecret = "2e5aa931f64c42208851939fd2ddcd95";
-        //System.out.println( apiBaseUrl + fitbitSiteBaseUrl +exampleBaseUrl + clientConsumerKey  + clientSecret);
+        
     }
     /**
      *
@@ -66,7 +66,8 @@ public class FitbitApiAuthExampleServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
-       
+       System.out.println( apiBaseUrl + fitbitSiteBaseUrl +exampleBaseUrl + clientConsumerKey  + clientSecret);
+        System.out.println( OAUTH_TOKEN + "   "+OAUTH_VERIFIER );
         FitbitAPIClientService<FitbitApiClientAgent> apiClientService = new FitbitAPIClientService<FitbitApiClientAgent>(
                 new FitbitApiClientAgent(apiBaseUrl, fitbitSiteBaseUrl, credentialsCache),
                 clientConsumerKey,
@@ -75,8 +76,8 @@ public class FitbitApiAuthExampleServlet extends HttpServlet {
                 entityCache,
                 subscriptionStore
         );
-         System.out.println( apiBaseUrl + fitbitSiteBaseUrl +exampleBaseUrl + clientConsumerKey  + clientSecret);
-         System.out.println( OAUTH_TOKEN + "   "+OAUTH_VERIFIER );
+       //  System.out.println( apiBaseUrl + fitbitSiteBaseUrl +exampleBaseUrl + clientConsumerKey  + clientSecret);
+         
         if (request.getParameter("completeAuthorization") != null) 
         {
             String tempTokenReceived = request.getParameter(OAUTH_TOKEN);
