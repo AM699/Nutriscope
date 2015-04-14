@@ -52,8 +52,7 @@ public class FitbitApiAuthExampleServlet extends HttpServlet {
       /*  */apiBaseUrl ="https://api.fitbit.com";
         fitbitSiteBaseUrl = "https://www.fitbit.com";
         exampleBaseUrl ="http://localhost:8084/Nutriscope/";
-        clientConsumerKey ="381ac49b05e54a8892339a80a57dcc61";
-        clientSecret = "2e5aa931f64c42208851939fd2ddcd95";
+    
         
     }
     /**
